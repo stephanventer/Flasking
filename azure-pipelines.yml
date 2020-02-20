@@ -9,15 +9,15 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 strategy:
-  matrix:
-    Python381:
-      python.version: '3.8.1'
+    matrix:
+      Python36:
+        python.version: '3.6'
 
 steps:
 - task: UsePythonVersion@0
   inputs:
-    versionSpec: '$(pythonVersion)'
-    displayName: 'Use Python $(pythonVersion)'
+    versionSpec: '$(python.version)'
+    displayName: 'Use Python $(python.version)'
 - script: |
     python -m venv antenv
     source antenv/bin/activate
