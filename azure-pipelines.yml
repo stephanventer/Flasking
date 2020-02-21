@@ -9,23 +9,20 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 strategy:
-    matrix:
-      Python36:
-        python.version: '3.6'
+  matrix:
+    Python38:
+      python.version: '3.8'
 
 steps:
 - task: UsePythonVersion@0
   inputs:
     versionSpec: '$(python.version)'
-    displayName: 'Use Python $(python.version)'
+  displayName: 'Use Python $(python.version)'
+
 - script: |
-    python -m venv antenv
-    source antenv/bin/activate
     python -m pip install --upgrade pip
-    pip install setup
     pip install -r requirements.txt
-  workingDirectory: $(projectRoot)
-  displayName: "Install requirements"
+  displayName: 'Install dependencies'
 
 - script: |
     python -m pip install flake8
