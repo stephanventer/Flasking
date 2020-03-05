@@ -6,7 +6,15 @@
   </head>
   <body>
     <h1>Flasking</h1>
-    <p>A web app with Python</p>
-    <img src="https://media.giphy.com/media/3og0IEXRvwMN0cLSaQ/giphy.gif" />
+    <p>A list of PS4 consoles on Trademe</p>
+    <table>
+      {%for i in range(0,len1)%}
+        <tr>
+          <td>{{list1[i]['title']}}</td>
+          <td>{{list1[i]['price']}}</td>
+        </tr>
+      {%endfor%} 
+     
+    </table>
   </body>
 </html>
