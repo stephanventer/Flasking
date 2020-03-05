@@ -22,3 +22,12 @@ def GetConsoles():
     
         page += 1
     return results
+
+def AveragePrice(list1):
+    sum1 = 0
+    for item in list1:
+        a = item["price"].strip("$")
+        b = a.replace(",","")
+        sum1 += float(b)
+
+    return sum1 / len(list1)

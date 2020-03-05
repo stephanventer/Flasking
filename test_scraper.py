@@ -1,7 +1,7 @@
 import pytest
 import scraper
 
-#Test if the list returns from GetConsoles contains a title and price
+#Test if the list returns from GetConsoles contains a title and price column
 def test_GetConsoles():
     containsTitle = False
     containsPrice = False
@@ -14,7 +14,6 @@ def test_GetConsoles():
         
         if(len(list1[0]["price"]) > 0):
             containsPrice = True
-    
     except:
         print("fail")
       
