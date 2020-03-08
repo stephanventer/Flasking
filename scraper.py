@@ -16,7 +16,7 @@ def GetConsoles():
             try:
                 item_title = item.find("div", {"class":"title"}).text.strip()
                 item_price = item.find("div", {"class":"listingBuyNowPrice"}).text.strip()
-                results.append({"title" : item_title, "pric1" : item_price})
+                results.append({"title" : item_title, "price" : item_price})
             except:
                 print("Fail")
     
