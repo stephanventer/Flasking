@@ -6,7 +6,6 @@ app = Flask(__name__)
 consoles = scraper.GetConsoles()
 print(consoles)
 
-#Get average price
 average = scraper.AveragePrice(consoles)
 
 @app.route("/")
